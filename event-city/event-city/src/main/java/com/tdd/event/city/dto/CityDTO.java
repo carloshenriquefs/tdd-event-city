@@ -1,5 +1,7 @@
 package com.tdd.event.city.dto;
 
+import com.tdd.event.city.entities.City;
+
 public class CityDTO {
 
     private Long id;

@@ -1,8 +1,8 @@
-package com.devsuperior.demo.dto;
+package com.tdd.event.city.dto;
+
+import com.tdd.event.city.entities.Event;
 
 import java.time.LocalDate;
-
-import com.devsuperior.demo.entities.Event;
 
 public class EventDTO {
 	

@@ -1,5 +1,9 @@
 package com.tdd.event.city.entities;
 
+import jakarta.persistence.*;
+
+import java.time.LocalDate;
+
 @Entity
 @Table(name = "tb_event")
 public class Event {
