@@ -1,4 +1,4 @@
-# :construction: - Desafio: Tdd-Eventy-City
+# :construction: - Desafio: TDD-Event-City
 
 * Desenvolvimento TDD de API Rest com Java e Spring Boot;
 * Implementação de cenários de busca, inserção, deleção e atualização;
@@ -6,9 +6,29 @@
 
 ##
 
-## :clipboard: - Diagrama:
+## :clipboard: - Diagramas:
 
 ![tdd drawio](https://github.com/carloshenriquefs/tdd-event-city/assets/54969405/3105cb1b-5bc1-4965-84d9-39f292da0e6d)
+
+![seed drawio](https://github.com/carloshenriquefs/tdd-event-city/assets/54969405/ab837811-3290-465d-80b3-f1261732ea13)
+
+##
+
+## :hourglass: - Tests:
+
+#### :house: - City:
+
+    - findAllShouldReturnAllResourcesSortedByName(){}
+    - insertShouldInsertResource(){}
+    - deleteShouldReturnNoContentWhenIndependentId(){}
+    - deleteShouldReturnNotFoundWhenNonExistingId(){}
+
+##
+
+#### :microphone: - Event:
+
+    - updateShouldUpdateResourceWhenIdExists(){}
+    - updateShouldReturnNotFoundWhenIdDoesNotExists(){}
 
 ##
 
