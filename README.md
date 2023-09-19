@@ -14,6 +14,21 @@
 
 ##
 
+## 	:gear: - Endpoint's:
+
+#### :house: - City:
+
+        - findById(){}
+        - findAllName(){}
+        - insert(){}
+        - delete(){}
+
+#### :microphone: - Event:
+
+        - update(){}
+
+##
+
 ## :hourglass: - Tests:
 
 #### :house: - City:
