@@ -12,7 +12,7 @@ import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
@@ -47,7 +47,7 @@ public class CityControllerIT {
         String jsonBody = objectMapper.writeValueAsString(dto);
 
         ResultActions result =
-                mockMvc.perform(get("/cities")
+                mockMvc.perform(post("/cities")
                         .content(jsonBody)
                         .contentType(MediaType.APPLICATION_JSON)
                         .accept(MediaType.APPLICATION_JSON));
@@ -63,7 +63,7 @@ public class CityControllerIT {
         Long independentId = 5L;
 
         ResultActions result =
-                mockMvc.perform(get("/cities/{id}", independentId));
+                mockMvc.perform(delete("/cities/{id}", independentId));
 
         result.andExpect(status().isNoContent());
     }
@@ -72,10 +72,22 @@ public class CityControllerIT {
     @Transactional(propagation = Propagation.SUPPORTS)
     public void deleteShouldReturnNotFoundWhenNonExistingId() throws Exception {
 
-        Long independentId = 5L;
+        Long nonExistingId = 50L;
 
         ResultActions result =
-                mockMvc.perform(get("/cities/{id}", independentId));
+                mockMvc.perform(delete("/cities/{id}", nonExistingId));
+
+        result.andExpect(status().isNotFound());
+    }
+
+    @Test
+    @Transactional(propagation = Propagation.NEVER)
+    public void deleteShouldReturnBadRequestWhenDependentId() throws Exception {
+
+        Long dependentId = 1L;
+
+        ResultActions result =
+                mockMvc.perform(delete("/cities/{id}", dependentId));
 
         result.andExpect(status().isBadRequest());
     }
