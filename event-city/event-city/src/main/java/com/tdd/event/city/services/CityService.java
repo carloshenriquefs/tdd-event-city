@@ -39,7 +39,7 @@ public class CityService {
         List<City> list = cityRepository.findAll(Sort.by("name"));
         return list.stream().map(x -> new CityDTO(x)).collect(Collectors.toList());
     }
-    
+
     public CityDTO insert(CityDTO cityDTO) {
         City entity = new City();
         entity.setName(cityDTO.getName());
