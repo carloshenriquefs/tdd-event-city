@@ -14,18 +14,26 @@
 
 ##
 
-## 	:gear: - Endpoint's:
+## :gear: - Endpoint's:
 
 #### :house: - City:
 
-        - findById(){}
-        - findAllName(){}
-        - insert(){}
-        - delete(){}
+``GET:`` <br />
+* findById(id){} <br />
+* findAllName(){}
+
+``POST:`` <br />
+* insert(){}
+    
+``DELETE:`` <br />
+* delete(id){}
+
+##
 
 #### :microphone: - Event:
 
-        - update(){}
+``PUT:`` <br />
+* update(id){}
 
 ##
 
